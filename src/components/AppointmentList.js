@@ -11,7 +11,6 @@ class AppointmentList extends Component{
         const appointments = this.props.appointment;  
         const message = appointments.length === 0 ? 'There are no appointments' : 'There are appointments to review:'
 
-
         return(
 
             <div className="card mt-5">
@@ -27,12 +26,10 @@ class AppointmentList extends Component{
                                 delete = {this.props.delete}
                             />; 
                         })}
-                       
                         </div>
                 </div>
             </div>
         )
-
     }
 }
 

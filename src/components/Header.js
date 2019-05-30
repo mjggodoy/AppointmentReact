@@ -10,7 +10,6 @@ const Header = props =>{
                 {props.title}
             </h1>
         </header>
-
     )
 }
 

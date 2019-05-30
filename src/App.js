@@ -39,7 +39,7 @@ class App extends Component {
     const appointments = [...this.state.appointments , newAppointment];
     this.setState ({
         
-      appointments : appointments
+      appointments
     })
   }
 

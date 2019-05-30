@@ -54,7 +54,6 @@ class Form extends Component{
                 error: false,
             })
         }
-
     }
         
 
