@@ -15,7 +15,6 @@ class App extends Component {
 
   componentDidMount(){
 
-    console.log('here');
     const things = localStorage.getItem('Appointments');
     if(things){
 
@@ -45,11 +44,8 @@ class App extends Component {
 
   deleteAppointment = (appointment) => {
 
-    console.log(appointment);
     const appointmentscopy = [...this.state.appointments]
-    console.log(appointmentscopy)
     const appointments = appointmentscopy.filter(element => element.id !== appointment);
-    console.log(appointments)
 
     this.setState ({
         
