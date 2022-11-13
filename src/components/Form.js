@@ -3,9 +3,7 @@ import './../index.css'
 import uuid from 'uuid';
 import PropTypes from 'prop-types';
 
-class Form extends Component{
-
-
+class Form extends Component {
     petNameRef = React.createRef();
     ownerNameRef = React.createRef();
     dateRef = React.createRef();
@@ -13,31 +11,23 @@ class Form extends Component{
     symRef = React.createRef();
 
     state = {
-
         error: false
     }
 
     createNewAppointment = (e) =>{
-
         e.preventDefault();
-
         const pet = this.petNameRef.current.value,
-                owner = this.ownerNameRef.current.value,
-                date = this.dateRef.current.value,
-                hour = this.hourRef.current.value,
-                symtoms = this.symRef.current.value
+        owner = this.ownerNameRef.current.value,
+        date = this.dateRef.current.value,
+        hour = this.hourRef.current.value,
+        symtoms = this.symRef.current.value
 
-        if(pet === '' || owner === '' || date === '' || hour === ''  || symtoms === ''){
-
+        if(pet === '' || owner === '' || date === '' || hour === ''  || symtoms === '') {
             this.setState({
-
                 error: true,
             })
-        
-        }else{
-
-            const newAppointment ={
-
+        } else {
+            const newAppointment = {
                 id: uuid(),
                 pet : pet,
                 owner : owner,
@@ -45,17 +35,13 @@ class Form extends Component{
                 hour: hour,
                 symtoms: symtoms
             }
-
             this.props.createNewAppointment(newAppointment);
             e.currentTarget.reset();
-            
             this.setState({
-
                 error: false,
             })
         }
     }
-        
 
     render(){
         const error = this.state.error;
@@ -111,7 +97,6 @@ class Form extends Component{
 }
 
 Form.proptype = {
-
     createNewAppointment : PropTypes.func.isRequired
 }
 

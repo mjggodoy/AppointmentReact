@@ -1,18 +1,13 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-class Appointment extends Component{
-
+class Appointment extends Component {
     deleteAppointment = () => {
-
         this.props.delete(this.props.appointment.id);
     }
 
-    render(){
-
-        const {symtoms, pet, owner, date, hour, id} = this.props.appointment;
-        console.log(id);
-
+    render() {
+        const { symtoms, pet, owner, date, hour, id} = this.props.appointment;
         return(
             <div className="media mt-3">
                 <div className="media-body">
@@ -28,12 +23,9 @@ class Appointment extends Component{
     }
 }
 
-
-Appointment.proptype={
-
+Appointment.proptype = {
     key: PropTypes.number.isRequired,
     appointment: PropTypes.shape({
-        
         id: PropTypes.string.id,
         date: PropTypes.string.isRequired,
         hour: PropTypes.string.isRequired,
@@ -42,7 +34,6 @@ Appointment.proptype={
         owner: PropTypes.string.isRequired
 
     }),
-
     delete: PropTypes.func.isRequired
 }
 

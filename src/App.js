@@ -8,52 +8,41 @@ import AppointmentList from './components/AppointmentList'
 class App extends Component {
 
   state = {
-
     appointments : []
-
   }
 
-  componentDidMount(){
-
+  componentDidMount() {
     const things = localStorage.getItem('Appointments');
-    if(things){
-
+    if(things) {
       this.setState({
-
         appointments: JSON.parse(things)
-
       })
     }
   }
 
-  componentDidUpdate(){
-      
+  componentDidUpdate() {
       localStorage.setItem(
       'Appointments', 
       JSON.stringify(this.state.appointments));
   }
 
   createNewAppointment = (newAppointment) => {
-
     const appointments = [...this.state.appointments , newAppointment];
     this.setState ({
-        
       appointments
     })
   }
 
   deleteAppointment = (appointment) => {
-
     const appointmentscopy = [...this.state.appointments]
     const appointments = appointmentscopy.filter(element => element.id !== appointment);
 
     this.setState ({
-        
       appointments
     })
   }
 
-  render(){
+  render() {
     return (
       <div className="container">
         <Header

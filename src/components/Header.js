@@ -1,10 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Header = props =>{
-    
+const Header = props => {
     return(
-
         <header>
             <h1 className="text-center">
                 {props.title}
@@ -14,7 +12,6 @@ const Header = props =>{
 }
 
 Header.prototype = {
-
     title : PropTypes.string.isRequired
 }
 
